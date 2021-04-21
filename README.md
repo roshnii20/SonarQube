@@ -158,6 +158,14 @@ STEP 5: Now go to SonarQube server and see the detailed report
 
 ![picture15](https://github.com/roshnii20/SonarQube/blob/main/pictures/Picture15.png)
 
+All traits:
+
+Bug – A coding error that will break your code and needs to be fixed immediately.
+Vulnerability – A point in your code that's open to attack.
+Code Smell – A maintainability issue that makes your code confusing and difficult to maintain.
+Security Hotspot- Highlights a security-sensitive piece of code that the developer needs to review. Upon review, you'll either find there is no threat or you need to apply a fix to secure the code. 
+Debt - technical debt (TD) TD is the effort to fix all maintainability issues
+
 CONCLUSION: We have successfully scanned our python sciprt for vulnerabilities, bugs, and other traits using SonarQube
 
 
