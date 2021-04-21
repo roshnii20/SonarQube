@@ -40,6 +40,7 @@ STEP 1: Install Java using the following command:
 sudo apt-get install openjdk-11-jdk
 
 Verify: java -version
+
 ![picture2](https://github.com/roshnii20/SonarQube/blob/main/pictures/Picture2.png)
 
 STEP 2: Install Docker and adding user to docker group
@@ -77,8 +78,10 @@ STEP 3: Installing SonarQube using Docker
 docker run -d --name sonarqube -p 9000:9000 sonarqube
 
 SonarQube runs on port 9000
+
 ![picture4](https://github.com/roshnii20/SonarQube/blob/main/pictures/Picture4.png)
 
 Verify the container is running:
+
 ![picture5](https://github.com/roshnii20/SonarQube/blob/main/pictures/Picture5.png)
 
