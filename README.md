@@ -134,7 +134,7 @@ Check the version:
 ![picture9](https://github.com/roshnii20/SonarQube/blob/main/pictures/Picture9.png)
 
 PART 3: Writing a basic Python script
-I have attached the script in scripts folder in the repository. I have written a simple script to do some calculations.
+I have attached the script in scripts folder in the repository. I have used a simple script to do some calculations.
 
 PART 4: Creating a project 
 
