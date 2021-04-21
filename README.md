@@ -22,7 +22,7 @@ SonarQube also ensures code reliability, Application security, and reduces techn
 3.	One or more scanners running on your build or continuous integration servers to analyze projects.
 
 
-Virtual Machine requirements and prerequisites:
+Virtual Machine requirements and prerequisites: ( I am using Ubuntu as my OS, you can use any Linux OS of your choice)
 
 •	3CPU, 8GB RAM
 •	Java
@@ -84,4 +84,81 @@ SonarQube runs on port 9000
 Verify the container is running:
 
 ![picture5](https://github.com/roshnii20/SonarQube/blob/main/pictures/Picture5.png)
+
+STEP 4: Go to the browser and go to http://localhost:9000 (if you are running on a VM then replace localhost with the IP address) 
+
+![picture6](https://github.com/roshnii20/SonarQube/blob/main/pictures/Picture6.png)
+
+Username and password is *admin*
+
+PART 2: Installing Sonar Scanner
+
+
+STEP 1: Download Sonar scanner package and move it to /opt directory
+
+mkdir /downloads/sonarqube -p
+cd /downloads/sonarqube
+wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.2.0.1873-linux.zip
+unzip sonar-scanner-cli-4.2.0.1873-linux.zip
+mv sonar-scanner-4.2.0.1873-linux /opt/sonar-scanner
+
+STEP 2: Editing sonar-scanner.properties file 
+
+sudo nano /opt/sonar-scanner/conf/sonar-scanner.properties
+
+
+Configure the Sonarqube scanner to connect to your Sonarqube server.
+
+sonar.host.url=http://localhost:9000
+sonar.sourceEncoding=UTF-8
+
+Now, we need to add the sonar-scanner command to the PATH variable.
+
+Let us create a file to automate the required environment variables configuration
+
+sudo nano /etc/profile.d/sonar-scanner.sh
+
+![picture7](https://github.com/roshnii20/SonarQube/blob/main/pictures/Picture7.png)
+
+STEP 3: Restart the machine and run the source command to add scanner in PATH variable
+
+reboot
+source /etc/profile.d/sonar-scanner.sh
+
+Verify:
+
+![picture8](https://github.com/roshnii20/SonarQube/blob/main/pictures/Picture8.png)
+
+Check the version:
+
+![picture9](https://github.com/roshnii20/SonarQube/blob/main/pictures/Picture9.png)
+
+PART 3: Writing a basic Python script
+I have attached the script in scripts folder in the repository. I have written a simple script to do some calculations.
+
+PART 4: Creating a project 
+
+Step 1: Go to SonarQube server and create a new project manually
+
+![picture11](https://github.com/roshnii20/SonarQube/blob/main/pictures/Picture11.png)
+
+STEP 2: Generate a new token 
+
+![picture12](https://github.com/roshnii20/SonarQube/blob/main/pictures/Picture12.png)
+
+STEP 3: Choose “Other” in build and OS as Linux: and execute the given commands on your machine
+
+![picture13](https://github.com/roshnii20/SonarQube/blob/main/pictures/Picture13.png)
+ 
+STEP 4: Successful output after command:
+ 
+![picture14](https://github.com/roshnii20/SonarQube/blob/main/pictures/Picture14.png)
+
+STEP 5: Now go to SonarQube server and see the detailed report
+
+![picture15](https://github.com/roshnii20/SonarQube/blob/main/pictures/Picture15.png)
+
+CONCLUSION: We have successfully scanned our python sciprt for vulnerabilities, bugs, and other traits using SonarQube
+
+
 
