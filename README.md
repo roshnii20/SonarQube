@@ -29,7 +29,7 @@ Virtual Machine requirements and prerequisites: ( I am using Ubuntu as my OS, yo
 •	Docker
 
 SonarQube has a dependency on Java, so we need that installed. 
-It also needs a database to store analysis results. By default, it uses H2 database, which is fine for lighter and non-critical workloads. But for critical workloads, it is recommended to use databases like PostgreSQL, MySQL etc. 
+It also needs a database to store analysis results. By default, it uses embedded H2 database, which is fine for lighter and non-critical workloads. But for critical workloads, it is recommended to use databases like PostgreSQL, MySQL etc. 
 Here in this lab, we are using the default H2 database.  
 We will install SonarQube using Docker so we need that installed too.
 
